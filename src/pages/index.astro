@@ -1,36 +1,17 @@
 ---
+import MainLayout from "../layouts/MainLayout.astro"
 const name = "Ariana Alisson"
-const title = "Astro"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<nav>
-			<a href="/">Home page</a>
-			<a href="/about">About page</a>
-			<a href="/contact">Contact page</a>
-		</nav>
-		<h1>{name} x </h1>
-		<p>Momento actual: {new Date().toLocaleDateString()} {new Date().toLocaleTimeString()}</p>
-		<p id="current-time">Momento actual real: </p>
-		<footer></footer>
+<MainLayout title="Inicio">
+	<h1>{name} x </h1>
+	<p>Momento actual: {new Date().toLocaleDateString()} {new Date().toLocaleTimeString()}</p>
+	<p id="current-time">Momento actual real: </p>
+	
 
 	<script>
-		const currentYear: number = new Date().getFullYear();
 		const currentTime = new Date().toLocaleTimeString()
-		const footer = document.querySelector('footer') as HTMLElement
-		footer.innerText = `Current year ${currentYear}`
-		
-		
 		let menssage = document.getElementById("current-time") as HTMLParagraphElement
 		menssage.textContent += `${currentTime}`;
 	</script>
-	</body>
-</html>
+</MainLayout>

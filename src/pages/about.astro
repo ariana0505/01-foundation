@@ -1,16 +1,15 @@
 ---
-
+import CustomTitle from "../components/CustomTitle.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>about</title>
-	</head>
-	<body>
-		<h1>about</h1>
-	</body>
-</html>
+<MainLayout title="about">
+	<h1>About</h1>
+	<CustomTitle title="This is custom title"></CustomTitle>
+</MainLayout>
+<!-- <style  is:global>	 -->
+<style>
+	h1{
+		color: red;
+	}
+</style>
